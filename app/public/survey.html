@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="photoLink" class="col-sm-2 control-label">Link to Photo (Required):</label>
+                <label for="photoLink" class="col-sm-2 control-label">URL Link to Photo (Required):</label>
                 <div class="col-sm-10">
                     <input type="url" class="form-control" id="photoLink">
                 </div>
@@ -38,14 +38,16 @@
         <div class="page-header">
             <h3>Question 1</h3>
         </div>
-        <h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
+        <h4>I enjoy being creative.</h4>
         <div class="dropdown">
             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="true">
                 Please select
                 <span class="caret"></span>
             </button>
-            <ul id="q1" class="dropdown-menu" aria-labelledby="dropdownMenu1">
+
+            <input type="hidden" id="q1-value" />
+            <ul id="q1" class="dropdown-menu" aria-labelledby="dropdownMenu">
                 <li>
                     <a value="1">1 (Strongly Disagree)</a value>
                 </li>
@@ -66,13 +68,15 @@
         <div class="page-header">
             <h3>Question 2</h3>
         </div>
-        <h4>Generally speaking, you rely more on your experience than your imagination.</h4>
+        <h4>I prefer variety over routine.</h4>
         <div class="dropdown">
             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="true">
                 Please select
                 <span class="caret"></span>
             </button>
+
+            <input type="hidden" id="q2-value" />
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="q2">
                 <li>
                     <a value="1">1 (Strongly Disagree)</a>
@@ -94,13 +98,15 @@
         <div class="page-header">
             <h3>Question 3</h3>
         </div>
-        <h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
+        <h4>I talk to many different people at parties.</h4>
         <div class="dropdown">
             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="true">
                 Please select
                 <span class="caret"></span>
             </button>
+
+            <input type="hidden" id="q3-value" />
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="q3">
                 <li>
                     <a value="1">1 (Strongly Disagree)</a>
@@ -122,13 +128,15 @@
         <div class="page-header">
             <h3>Question 4</h3>
         </div>
-        <h4>You rarely do something just out of sheer curiosity.</h4>
+        <h4>I feel other people's emotions.</h4>
         <div class="dropdown">
             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="true">
                 Please select
                 <span class="caret"></span>
             </button>
+
+            <input type="hidden" id="q4-value" />
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="q4">
                 <li>
                     <a value="1">1 (Strongly Disagree)</a>
@@ -150,13 +158,15 @@
         <div class="page-header">
             <h3>Question 5</h3>
         </div>
-        <h4>People can rarely upset you.</h4>
+        <h4>I dislike confrontation.</h4>
         <div class="dropdown">
             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="true">
                 Please select
                 <span class="caret"></span>
             </button>
+
+            <input type="hidden" id="q5-value" />
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="q5">
                 <li>
                     <a value="1">1 (Strongly Disagree)</a>
@@ -178,13 +188,15 @@
         <div class="page-header">
             <h3>Question 6</h3>
         </div>
-        <h4>It is often difficult for you to relate to other people’s feelings.</h4>
+        <h4>I prefer cooperation over competition.</h4>
         <div class="dropdown">
             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="true">
                 Please select
                 <span class="caret"></span>
             </button>
+
+            <input type="hidden" id="q6-value" />
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="q6">
                 <li>
                     <a value="1">1 (Strongly Disagree)</a>
@@ -206,13 +218,15 @@
         <div class="page-header">
             <h3>Question 7</h3>
         </div>
-        <h4>In a discussion, truth should be more important than people’s sensitivities.</h4>
+        <h4>I like to seek adventure.</h4>
         <div class="dropdown">
             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="true">
                 Please select
                 <span class="caret"></span>
             </button>
+
+            <input type="hidden" id="q7-value" />
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="q7">
                 <li>
                     <a value="1">1 (Strongly Disagree)</a>
@@ -234,13 +248,15 @@
         <div class="page-header">
             <h3>Question 8</h3>
         </div>
-        <h4>You rarely get carried away by fantasies and ideas.</h4>
+        <h4>I believe in fate.</h4>
         <div class="dropdown">
             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="true">
                 Please select
                 <span class="caret"></span>
             </button>
+
+            <input type="hidden" id="q8-value" />
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="q8">
                 <li>
                     <a value="1">1 (Strongly Disagree)</a>
@@ -262,13 +278,15 @@
         <div class="page-header">
             <h3>Question 9</h3>
         </div>
-        <h4>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h4>
+        <h4>I believe in a higher power.</h4>
         <div class="dropdown">
             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="true">
                 Please select
                 <span class="caret"></span>
             </button>
+
+            <input type="hidden" id="q9-value" />
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="q9">
                 <li>
                     <a value="1">1 (Strongly Disagree)</a value>
@@ -290,13 +308,14 @@
         <div class="page-header">
             <h3>Question 10</h3>
         </div>
-        <h4>You feel more energetic after spending time with a group of people.</h4>
+        <h4>I believe that only I am in charge of my own destiny.</h4>
         <div class="dropdown">
             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="true">
                 Please select
                 <span class="caret"></span>
             </button>
+            <input type="hidden" id="q10-value" />
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="q10">
                 <li>
                     <a value="1">1 (Strongly Disagree)</a>
@@ -330,9 +349,11 @@
         </p>
     </div>
 </footer>
-<script>
+<script type="text/javascript">
     $(function () {
         $(".dropdown-menu li a").click(function (event) {
+            $('#' + $(this).parents('ul').attr('id') + '-value').val(parseInt($(this).attr('value')));
+
             $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
             $(this).parents(".dropdown").find('.btn').val($(this).data('a value'));
         });
@@ -343,28 +364,23 @@
         var newFriend = {
             name: $("#nameInput").val().trim(),
             photo: $("#photoLink").val().trim(),
-            scores: [
-            $("#q1").val(),
-            $("#q2").val(),
-            $("#q3").val(),
-            $("#q4").val(),
-            $("#q5").val(),
-            $("#q6").val(),
-            $("#q7").val(),
-            $("#q8").val(),
-            $("#q9").val(),
-            $("#q10").val()
-            ]
+            scores: []
         };
+
+        for(var i = 1; i <=10; i++){
+            newFriend['scores'].push(
+                parseInt($("#q"+i+"-value").val()))
+        }
 
         console.log(newFriend);
 
-    $.post("/api/friends", newFriend,
-        function(data) {
-          if (data) {
-            console.log("[LOG] DATA CAPTURED");
-          }
-        })
+        $.post("/api/friends", newFriend,
+            function (data) {
+                if (data) {
+                    console.log("[LOG] DATA CAPTURED");
+                    console.log(newFriend);
+                }
+            })
     });
 </script>
 
