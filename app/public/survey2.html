@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <title>Friend Finder App</title>
+</head>
+
+<body>
+    <!-- Your survey should have 10 questions of your choosing. Each answer should be on a scale of 1 to 5 based on how much the user agrees or disagrees with a question. -->
+    <div class="container">
+        <div class="page-header">
+            <h1>Survey Questions</h1>
+        </div>
+        <div class="page-header">
+            <h3>About you</h3>
+        </div>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="name" class="col-sm-2 control-label">Name (Required):</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="nameInput" placeholder="Jane Doe">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="photoLink" class="col-sm-2 control-label">URL Link to Photo (Required):</label>
+                <div class="col-sm-10">
+                    <input type="url" class="form-control" id="photoLink">
+                </div>
+            </div>
+        </form>
+        <div class="page-header">
+            <h3>Question1</h3>
+            <div class="form-group">
+                <label for="sel1">Select list:</label>
+                <select class="form-control" id="sel1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <h3>Question2</h3>
+            <div class="form-group">
+                <label for="sel1">Select list:</label>
+                <select class="form-control" id="sel2">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <h3>Question3</h3>
+            <div class="form-group">
+                <label for="sel1">Select list:</label>
+                <select class="form-control" id="sel3">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <h3>Question4</h3>
+            <div class="form-group">
+                <label for="sel1">Select list:</label>
+                <select class="form-control" id="sel4">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <h3>Question5</h3>
+            <div class="form-group">
+                <label for="sel1">Select list:</label>
+                <select class="form-control" id="sel5">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">
+                <span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
+                Submit</button>
+        </div>
+        <br>
+</body>
+<footer class="footer">
+    <div class="container">
+        <p>
+            <a href="/api/friends">API Friends List</a> |
+            <a href="https://github.com/tricialeav/friend-finder-app" target="_blank">GitHub Repo</a>
+        </p>
+    </div>
+</footer>
+<script type="text/javascript">
+    $("#submit").on("click", function (event) {
+        event.preventDefault();
+        var newFriend = {
+            name: $("#nameInput").val().trim(),
+            photo: $("#photoLink").val().trim(),
+            scores: []
+        };
+
+        for (var i = 1; i <= 5; i++) {
+            let numbers = parseInt($("#sel" + i).val());
+            newFriend.scores.push(numbers);
+        }
+
+        console.log(newFriend.scores);
+
+        $.ajax({
+            url: "/api/friends",
+            type: "POST",
+            data: newFriend
+        },
+            function (data) {
+                if (data) {
+                    console.log("[LOG] This has been posted");
+                }
+                else {
+                    console.log("[LOG] Error posting");
+                }
+            });
+    });
+</script>

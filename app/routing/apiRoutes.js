@@ -11,12 +11,12 @@ module.exports = function(app) {
     });
   
     app.post("/api/friends", function(req, res) {
-      if (friendData.length < 3) { 
-        console.log('IM POSTING', req.body);
+      // if (friendData.length < 3) { 
+        console.log(req.body);
         friendData.push(req.body);
         res.json(true);
       }
-    });
+    );
   
     app.post("/api/clear", function() {
       friendData = [];
